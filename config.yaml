@@ -1,0 +1,71 @@
+#国内订单文件
+order:
+  fileName: 国内订单-7月n.xlsx
+  sheet:
+    #Sheet名称
+    sheetName: 国内
+    #列名
+    column:
+      # （从1开始）列名在第几行
+      columnNameRow: 2
+      columnName:
+        orderId: 订单号
+        Shipping: 正确运费
+    # （从1开始）在第几行开始读取数据
+    dateSatrtRow: 3
+
+#对账单文件
+reconciliation:
+  sheet:
+    #Sheet名称
+    sheetName: Sheet1
+    #列名
+    column:
+      # 列名所在行
+      columnNameRow: 1
+      columnName:
+        # 运单编号 列名
+        expressDeliveryID: 运单编号
+        # 金额 列名
+        amount: 金额
+    # （从1开始）在第几行开始读取数据
+    dateSatrtRow: 2
+
+
+# 总销售明细目录
+salesDetails:
+  sheet:
+    #Sheet名称
+    sheetName: 对账单
+    #列名
+    column:
+      # 列名所在行
+      columnNameRow: 1
+      # 列名
+      columnName:
+        orderID: 订单编号
+        expressDeliveryBill: 运单号
+    # （从1开始）在第几行开始读取数据
+    dateSatrtRow: 2
+
+# 查快递单目录
+expressDelivery:
+  sheet:
+    #Sheet名称
+    sheetName: 打印单
+    #列名
+    column:
+      # 列名所在行
+      columnNameRow: 1
+      columnName:
+        orderID: 订单编号
+        # 卖家ID 列名
+        sellerID: 卖家备注
+        # 快递单号列名
+        expressBill: 快递单号
+    # （从1开始）在第几行开始读取数据
+    dateSatrtRow: 2
+  # 匹配合同号规则，不要动
+  contractNoRegex:
+    - '[0-9]-[A-Z]{1,}[0-9]*'
+    - '[A-Z]{1,}[0-9]*'
